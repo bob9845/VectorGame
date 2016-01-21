@@ -1,8 +1,8 @@
 # ProcessingNewProject
-A simple program which makes a fullscreen processing window.  Good for starting projects.
+A simple program which reflects where the club is in programming.  Clone if falling behind.
 
-1. To Start, type into terminal:  
-	`git clone https://github.com/RAHS-Computer-Science-Club/ProcessingNewProject.git`
+1. To Clone, type into terminal:  
+	`git clone https://github.com/RAHS-Computer-Science-Club/ProcessingGame`
 2. Rename the root directory to whatever you like (The project name).  The name you choose is defined by "__RenamedProject__"   
 	`mv ProcessingNewProject/` __`RenamedProject`__`/`
 3. Then, cd into it:  
@@ -11,4 +11,4 @@ A simple program which makes a fullscreen processing window.  Good for starting 
 	`./rename.sh` __`RenamedProject`__
 5. Test, to make sure it compiles:  
 	`ant build`
-6. Now you're all set to make a new project in processing!
+6. Now you're all caught up in our processing unit!
