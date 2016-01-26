@@ -6,9 +6,9 @@ import processing.core.*;
  * A simple program that shows an orange screen.
  */
 public class Applet extends PApplet {
-
 	PImage img_player;
 	int playerY = 120;
+	Monster monster;
 
 	public void keyPressed() {
 		if(key == CODED) {
@@ -22,11 +22,12 @@ public class Applet extends PApplet {
 	public void settings() {
 		size(640, 480);
 		img_player = loadImage("PersonReady.png");
+		monster = new Monster(this);
 	}
 
 	public void draw() {
 		background(255,127,0);
 		image(img_player, mouseX,playerY);
+		monster.loop();
 	}
-
 }
