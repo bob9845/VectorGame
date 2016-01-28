@@ -6,28 +6,34 @@ import processing.core.*;
  * A simple program that shows an orange screen.
  */
 public class Applet extends PApplet {
-	PImage img_player;
-	int playerY = 120;
+	Player player;
 	Monster monster;
+	World world;
 
 	public void keyPressed() {
 		if(key == CODED) {
 			if(keyCode == UP)
-				playerY -= 5;
+				player.y -= 5;
 			else if (keyCode == DOWN)
-				playerY += 5;	
+				player.y += 5;
+			else if (keyCode == RIGHT)
+				player.x += 5;
+			else if (keyCode == LEFT)
+				player.x -= 5;
 		}
 	}
 
 	public void settings() {
 		size(640, 480);
-		img_player = loadImage("PersonReady.png");
+		player = new Player(this);
 		monster = new Monster(this);
+		world = new World(this);
 	}
 
 	public void draw() {
 		background(255,127,0);
-		image(img_player, mouseX,playerY);
-		monster.loop();
+		world.loop();
+		player.loop();
+		monster.loop(player);
 	}
 }
