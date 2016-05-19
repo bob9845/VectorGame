@@ -5,35 +5,38 @@ import processing.core.*;
 /**
  * A simple program that shows an orange screen.
  */
-public class Applet extends PApplet {
-	Player player;
-	Monster monster;
-	World world;
-
-	public void keyPressed() {
-		if(key == CODED) {
-			if(keyCode == UP)
-				player.y -= 5;
-			else if (keyCode == DOWN)
-				player.y += 5;
-			else if (keyCode == RIGHT)
-				player.x += 5;
-			else if (keyCode == LEFT)
-				player.x -= 5;
-		}
-	}
+public class Applet extends PApplet { 
+	Monster bob;
+	Person larry;
+	Player jim;
 
 	public void settings() {
-		size(640, 480);
-		player = new Player(this);
-		monster = new Monster(this);
-		world = new World(this);
+		fullScreen();
+		size(1024, 768);
+		bob = new Monster(this);
+		larry = new Person(this);
+		jim = new Player(this);
 	}
 
 	public void draw() {
-		background(255,127,0);
-		world.loop();
-		player.loop();
-		monster.loop(player);
+		background(50,255,255);
+		bob.loop(jim);
+		larry.loop();
+		jim.loop();
+
 	}
+
+	public void keyPressed() {
+		if (key == CODED) {
+			if (keyCode == UP)
+				jim.y -= 20;
+			if (keyCode == DOWN)
+				jim.y +=20;
+			if (keyCode == LEFT)
+				jim.x -=20;
+			if(keyCode == RIGHT)
+				jim.x +=20;
+		}
+	}
+
 }

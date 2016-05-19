@@ -10,14 +10,13 @@ public class LivingBeing {
 
 	public LivingBeing(Applet app, int xx, int yy, String image) {
 		m = app;
-		x = xx;
-		y = yy;
+		x = 512;
+		y = 384;
 		try {
 			img = m.loadImage(image);
 		} catch ( Exception e) {
-			System.out.println("Couldn't find image " + image);
+			System.out.println("couldn't find your stupid picture" + image);
 			System.exit(-1);
 		}
 	}
-
 }
